@@ -1,12 +1,10 @@
 import { Configuration, OpenAIApi } from "openai";
 export default async function handler(req: any, res: any) {
-  const prompt = `Write me 2 or 3 funny ${req.query.type}s about ${req.query.topic}`
+  const prompt = `Act as a developer. Write me a proposal for the following job description: ${req.query.post}`;
 
-  // gpt-3.5-turbo
-  const configuration = new Configuration({
+  const openai = new OpenAIApi(new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
-  });
-  const openai = new OpenAIApi(configuration);
+  }));
 
   try {
     const completion = await openai.createChatCompletion({

@@ -53,7 +53,9 @@ export default function ProposalGenerator() {
                 </div>
 
                 <div className="flex flex-wrap gap-4 justify-end">
-                    <button disabled={loading} className='bg-purple-600 hover:bg-purple-700 text-white capitalize' onClick={() => handleGenerate()}>{loading && <span className='flex items-center'>Generating<span className='ml-2'><Loader height='28px' /></span></span> || <span>Generate</span>}</button>
+                    <button disabled={loading} className='bg-purple-600 hover:bg-purple-700 text-white capitalize' onClick={() => handleGenerate()}>
+                        {loading && <span className='flex items-center'>Generating<span className='ml-2'><Loader height='24px' /></span></span> || <span>Generate</span>}
+                    </button>
                 </div>
 
                 <div className="">
